@@ -1,0 +1,212 @@
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: #026AA7;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-slow), width var(--transition-slow);
+  z-index: 40;
+  overflow: hidden;
+}
+
+.sidebar--closed {
+  transform: translateX(-100%);
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-workspace {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 0;
+  flex: 1;
+}
+
+.sidebar-workspace-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #7B68EE, #4ECDC4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  flex-shrink: 0;
+}
+
+.sidebar-workspace-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebar-workspace-name {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.sidebar-workspace-type {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+}
+
+.sidebar-toggle {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-sm) 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 6px var(--spacing-lg);
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-section {
+  margin-top: var(--spacing-md);
+}
+
+.sidebar-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 6px var(--spacing-lg);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.sidebar-add-btn {
+  margin-left: auto;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.sidebar-add-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-board-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 6px var(--spacing-lg);
+  padding-left: calc(var(--spacing-lg) + 8px);
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.sidebar-board-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.sidebar-board-link.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-board-thumb {
+  width: 28px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.sidebar-star {
+  color: var(--text-light);
+  opacity: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-board-link:hover .sidebar-star {
+  opacity: 0.6;
+}
+
+.sidebar-star:hover {
+  opacity: 1 !important;
+}
+
+.sidebar-star--active {
+  opacity: 1;
+  color: #F2D600;
+}
+
+.sidebar-expand {
+  position: fixed;
+  top: calc(var(--header-height) + var(--spacing-md));
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #026AA7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  z-index: 40;
+  transition: width var(--transition-fast), background var(--transition-fast);
+}
+
+.sidebar-expand:hover {
+  width: 32px;
+  background: #0079BF;
+}

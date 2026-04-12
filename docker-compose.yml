@@ -1,0 +1,23 @@
+services:
+  ai-agent-board:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-agent-board:latest
+    container_name: ai-agent-board
+    ports:
+      - "3456:3456"
+    environment:
+      PORT: "3456"
+      # Optional — protect the runner API with a bearer token
+      # API_KEY: "change-me"
+      # Optional — enables AI stall detection for long-running Claude Code tasks
+      # ANTHROPIC_API_KEY: "sk-ant-..."
+      # STALL_DETECTION: "true"
+    volumes:
+      # Persist tasks' working directory across restarts
+      - workspace:/workspace
+    restart: unless-stopped
+
+volumes:
+  workspace:
